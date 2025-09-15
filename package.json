@@ -1,0 +1,22 @@
+{
+  "name": "github-user-activity",
+  "version": "1.0.0",
+  "description": "Fetch github user activity",
+  "main": "index.js",
+  "bin" : {
+    "github-activity": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evolentDelight/Github-User-Activity.git"
+  },
+  "author": "Benjamin Kwon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evolentDelight/Github-User-Activity/issues"
+  },
+  "homepage": "https://github.com/evolentDelight/Github-User-Activity#readme"
+}
