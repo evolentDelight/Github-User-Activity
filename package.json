@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Fetch github user activity",
   "main": "index.js",
-  "bin" : {
+  "bin": {
     "github-activity": "./index.js"
   },
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/evolentDelight/Github-User-Activity/issues"
   },
-  "homepage": "https://github.com/evolentDelight/Github-User-Activity#readme"
+  "homepage": "https://github.com/evolentDelight/Github-User-Activity#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2"
+  }
 }
