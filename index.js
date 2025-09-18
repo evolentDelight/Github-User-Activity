@@ -13,18 +13,22 @@ async function getUserActivity(username) {
       headers: headers,
     });
     if (!response.ok) {
-      if (response.status == 404) {
-        console.error(
-          `Account \[${username}\] is not valid. Please type in a valid Github Account`
-        );
-        return 0;
-      } else if (response.status == 403) {
-        console.error(`Account \[${username}\] is currently not available`);
-      } else if (response.status == 503) {
-        console.error(
-          `Github server is temporarily unavailable. Try again later`
-        );
+      switch (response.status) {
+        case 404:
+          console.error(
+            `Account \[${username}\] is not valid. Please type in a valid Github Account`
+          );
+          break;
+        case 403:
+          console.error(`Account \[${username}\] is currently not available`);
+          break;
+        case 503:
+          console.error(
+            `Github server is temporarily unavailable. Try again later`
+          );
+          break;
       }
+      return 0;
     }
 
     const result = await response.json();
