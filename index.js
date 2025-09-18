@@ -15,7 +15,7 @@ async function getUserActivity(username) {
     if (!response.ok) {
       if (response.status == 404) {
         console.error(
-          `Account \[${username}\] does not exist. Please type in an existing Github Account`
+          `Account \[${username}\] is not valid. Please type in a valid Github Account`
         );
         return 0;
       }
