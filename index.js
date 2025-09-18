@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+function processUserEvents(username, events) {
+  if (events.length === 0) {
+    console.log(`Account \[${username}\] does not have any recent activity`);
+  }
+  console.log(events);
+}
+
 async function getUserActivity(username) {
   const url = `https://api.github.com/users/${username}/events`;
   const headers = {
@@ -32,7 +39,8 @@ async function getUserActivity(username) {
     }
 
     const result = await response.json();
-    console.log(result);
+
+    processUserEvents(username, result);
   } catch (error) {
     console.error(error.message);
   }
