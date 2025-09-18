@@ -16,11 +16,11 @@ async function getUserActivity(username) {
       switch (response.status) {
         case 404:
           console.error(
-            `Account \[${username}\] is not valid. Please type in a valid Github Account`
+            `Account \[${username}\] is not valid. Please type in a valid Github Account.`
           );
           break;
         case 403:
-          console.error(`Account \[${username}\] is currently not available`);
+          console.error(`Account \[${username}\] is currently not available.`);
           break;
         case 503:
           console.error(
