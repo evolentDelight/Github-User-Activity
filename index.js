@@ -18,6 +18,8 @@ async function getUserActivity(username) {
           `Account \[${username}\] is not valid. Please type in a valid Github Account`
         );
         return 0;
+      } else if (response.status == 403) {
+        console.error(`Account \[${username}\] is currently not available`);
       }
     }
 
