@@ -13,9 +13,12 @@ async function getUserActivity(username) {
       headers: headers,
     });
     if (!response.ok) {
-      throw new Error(
-        `Response status: ${response.status}, ${response.statusText}`
-      );
+      if (response.status == 404) {
+        console.error(
+          `Account \[${username}\] does not exist. Please type in an existing Github Account`
+        );
+        return 0;
+      }
     }
 
     const result = await response.json();
