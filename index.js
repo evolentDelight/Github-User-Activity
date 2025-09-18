@@ -24,7 +24,7 @@ async function getUserActivity(username) {
           break;
         case 503:
           console.error(
-            `Github server is temporarily unavailable. Try again later`
+            `Github server is temporarily unavailable. Try again later.`
           );
           break;
       }
