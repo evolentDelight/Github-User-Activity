@@ -1,7 +1,7 @@
 {
   "name": "github-user-activity",
   "version": "1.0.0",
-  "description": "Fetch github user activity",
+  "description": "Fetch github user public activity/events",
   "main": "index.js",
   "bin": {
     "github-activity": "./index.js"
