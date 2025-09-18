@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import "dotenv/config";
 
 async function getUserActivity(username) {
   const url = `https://api.github.com/users/${username}/events`;
   const headers = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
-    Authorization: `Bearer ${process.env.access_token}`,
   };
 
   try {
@@ -16,8 +14,7 @@ async function getUserActivity(username) {
     });
     if (!response.ok) {
       throw new Error(
-        `Response status: ${response.status}`,
-        response.statusText
+        `Response status: ${response.status}, ${response.statusText}`
       );
     }
 
