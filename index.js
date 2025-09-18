@@ -20,6 +20,10 @@ async function getUserActivity(username) {
         return 0;
       } else if (response.status == 403) {
         console.error(`Account \[${username}\] is currently not available`);
+      } else if (response.status == 503) {
+        console.error(
+          `Github server is temporarily unavailable. Try again later`
+        );
       }
     }
 
