@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
+import handleOutputByEvent from "./handleOutputByEvent";
+
 function processUserEvents(username, events) {
   //Types of Events: https://docs.github.com/en/rest/using-the-rest-api/github-event-types?apiVersion=2022-11-28
   if (events.length === 0) {
     console.log(`Account \[${username}\] does not have any recent activity`);
   }
-  console.log(events);
+  handleOutputByEvent(events);
 }
 
 async function getUserActivity(username) {
