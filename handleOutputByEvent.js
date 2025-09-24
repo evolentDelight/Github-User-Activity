@@ -1,10 +1,25 @@
-function pushEvent(){
-  
+function pushEvent(event){
+  return `Pushed ${event.payload.size} commits to ${event.repo.name}`
 }
 
 export default function handleOutputByEvent(events){
+  let outputs = [];
 
-  return [
-    '<event date> :: <event description>'
-  ]
+  events.forEach((event) => {
+    const eventType = event.type;
+    let result = "- ";//Initial console output formatting
+
+    //Handle determining the type of event
+    if(eventType == 'PushEvent') result += pushEvent(event);
+
+    //Add Date to console output
+    const date = new Date(event.created_at)
+    result += `\t - ${date.toLocaleString()}`
+
+    outputs.push(result)
+  }
+
+  )
+
+  return outputs
 }
