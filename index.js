@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import handleOutputByEvent from "./handleOutputByEvent";
+import handleOutputByEvent from "./handleOutputByEvent.js";
 
 function processUserEvents(username, events) {
   //Types of Events: https://docs.github.com/en/rest/using-the-rest-api/github-event-types?apiVersion=2022-11-28
