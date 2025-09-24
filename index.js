@@ -7,7 +7,10 @@ function processUserEvents(username, events) {
   if (events.length === 0) {
     console.log(`Account \[${username}\] does not have any recent activity`);
   }
-  handleOutputByEvent(events);
+  const result = handleOutputByEvent(events);
+
+  //Output results onto console
+  result.forEach(event => console.log(event))
 }
 
 async function getUserActivity(username) {
