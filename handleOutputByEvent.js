@@ -14,7 +14,14 @@ export default function handleOutputByEvent(events) {
     let result = "- "; //Initial console output formatting
 
     //Handle determining the type of event
-    if (eventType == "PushEvent") result += pushEvent(event);
+    switch (eventType) {
+      case "PushEvent":
+        result += pushEvent(event);
+        break;
+      case "WatchEvent":
+        result += watchEvent(event);
+        break;
+    }
 
     //Add Date to console output
     const date = new Date(event.created_at);
