@@ -1710,5 +1710,154 @@
     },
     "public": true,
     "created_at": "2025-09-30T21:34:49Z"
+  },
+  {
+    "id": "55496159479",
+    "type": "ReleaseEvent",
+    "actor": {
+      "id": 159434,
+      "login": "DouweM",
+      "display_login": "DouweM",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/DouweM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159434?"
+    },
+    "repo": {
+      "id": 818331198,
+      "name": "pydantic/pydantic-ai",
+      "url": "https://api.github.com/repos/pydantic/pydantic-ai"
+    },
+    "payload": {
+      "action": "published",
+      "release": {
+        "url": "https://api.github.com/repos/pydantic/pydantic-ai/releases/251603929",
+        "assets_url": "https://api.github.com/repos/pydantic/pydantic-ai/releases/251603929/assets",
+        "upload_url": "https://uploads.github.com/repos/pydantic/pydantic-ai/releases/251603929/assets{?name,label}",
+        "html_url": "https://github.com/pydantic/pydantic-ai/releases/tag/v1.0.13",
+        "id": 251603929,
+        "author": {
+          "login": "DouweM",
+          "id": 159434,
+          "node_id": "MDQ6VXNlcjE1OTQzNA==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/159434?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DouweM",
+          "html_url": "https://github.com/DouweM",
+          "followers_url": "https://api.github.com/users/DouweM/followers",
+          "following_url": "https://api.github.com/users/DouweM/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DouweM/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DouweM/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DouweM/subscriptions",
+          "organizations_url": "https://api.github.com/users/DouweM/orgs",
+          "repos_url": "https://api.github.com/users/DouweM/repos",
+          "events_url": "https://api.github.com/users/DouweM/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DouweM/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "node_id": "RE_kwDOMMa-Ps4O_yvZ",
+        "tag_name": "v1.0.13",
+        "target_commitish": "main",
+        "name": "v1.0.13 (2025-10-01)",
+        "draft": false,
+        "immutable": false,
+        "prerelease": false,
+        "created_at": "2025-10-01T22:05:17Z",
+        "updated_at": "2025-10-02T01:12:03Z",
+        "published_at": "2025-10-02T01:12:03Z",
+        "assets": [],
+        "tarball_url": "https://api.github.com/repos/pydantic/pydantic-ai/tarball/v1.0.13",
+        "zipball_url": "https://api.github.com/repos/pydantic/pydantic-ai/zipball/v1.0.13",
+        "body": "## What's Changed\r\n* feat: Otel instrumentation version 3  by @bitnahian in https://github.com/pydantic/pydantic-ai/pull/3021\r\n* Don't send strict to HuggingFace API as it's not supported by their types and at least some models by @DouweM in https://github.com/pydantic/pydantic-ai/pull/3062\r\n* Correctly merge `Model.settings` with `model_settings` in direct mode by @moritzwilksch in https://github.com/pydantic/pydantic-ai/pull/2980\r\n* Expose `server_info` in `MCPServer` by @Whadup in https://github.com/pydantic/pydantic-ai/pull/3055\r\n* Support contextually overriding agent instructions by @mwildehahn in https://github.com/pydantic/pydantic-ai/pull/2926\r\n* Update evals attributes by @dmontagu in https://github.com/pydantic/pydantic-ai/pull/2924\r\n\r\n## New Contributors\r\n* @Whadup made their first contribution in https://github.com/pydantic/pydantic-ai/pull/3055\r\n\r\n**Full Changelog**: https://github.com/pydantic/pydantic-ai/compare/v1.0.12...v1.0.13",
+        "mentions_count": 6,
+        "mentions": [
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/159434?v=4",
+            "login": "DouweM",
+            "profile_name": "Douwe Maan",
+            "profile_url": "https://github.com/DouweM",
+            "avatar_user_actor": true
+          },
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/704593?v=4",
+            "login": "mwildehahn",
+            "profile_name": "Michael Hahn",
+            "profile_url": "https://github.com/mwildehahn",
+            "avatar_user_actor": true
+          },
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/2308119?v=4",
+            "login": "Whadup",
+            "profile_name": "Lukas Pfahler",
+            "profile_url": "https://github.com/Whadup",
+            "avatar_user_actor": true
+          },
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/21979486?v=4",
+            "login": "bitnahian",
+            "profile_name": "Nahian-Al Hasan",
+            "profile_url": "https://github.com/bitnahian",
+            "avatar_user_actor": true
+          },
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/35119617?v=4",
+            "login": "dmontagu",
+            "profile_name": "David Montague",
+            "profile_url": "https://github.com/dmontagu",
+            "avatar_user_actor": true
+          },
+          {
+            "avatar_url": "https://avatars.githubusercontent.com/u/58488209?v=4",
+            "login": "moritzwilksch",
+            "profile_name": "Moritz Wilksch",
+            "profile_url": "https://github.com/moritzwilksch",
+            "avatar_user_actor": true
+          }
+        ],
+        "short_description_html": "<h2>What's Changed</h2>\n<ul>\n<li>feat: Otel instrumentation version 3 by <a class=\"user-mention notranslate\" data-hovercard-type=\"user\" data-hovercard-url=\"/users/bitnahian/hovercard\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://github.com/bitnahian\">@bitnahian</a> in <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"3464095968\" data-permission-text=\"Title is private\" data-url=\"https://github.com/pydantic/pydantic-ai/issues/3021\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/pydantic/pydantic-ai/pull/3021/hovercard\" href=\"https://github.com/pydantic/pydantic-ai/pull/3021\">#3021</a>\n</li>\n<li>Don't send strict to HuggingFace API as it's not supported by their types and at least some models by <a class=\"user-mention notranslate\" data-hovercard-type=\"user\" data-hovercard-url=\"/users/DouweM/hovercard\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://github.com/DouweM\">@DouweM</a> in <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"3473827870\" data-permission-text=\"Title is private\" data-url=\"https://github.com/pydantic/pydantic-ai/issues/3062\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/pydantic/pydantic-ai/pull/3062/hovercard\" href=\"https://github.com/pydantic/pydantic-ai/pull/3062\">#3062</a>\n</li>\n<li>Co…</li>\n</ul>",
+        "is_short_description_html_truncated": true
+      }
+    },
+    "public": true,
+    "created_at": "2025-10-02T01:12:04Z",
+    "org": {
+      "id": 110818415,
+      "login": "pydantic",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/pydantic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110818415?"
+    }
+  },
+  {
+    "id": "55491229985",
+    "type": "DeleteEvent",
+    "actor": {
+      "id": 159434,
+      "login": "DouweM",
+      "display_login": "DouweM",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/DouweM",
+      "avatar_url": "https://avatars.githubusercontent.com/u/159434?"
+    },
+    "repo": {
+      "id": 818331198,
+      "name": "pydantic/pydantic-ai",
+      "url": "https://api.github.com/repos/pydantic/pydantic-ai"
+    },
+    "payload": {
+      "ref": "dmontagu/update-evals-attributes",
+      "ref_type": "branch",
+      "pusher_type": "user"
+    },
+    "public": true,
+    "created_at": "2025-10-01T22:05:20Z",
+    "org": {
+      "id": 110818415,
+      "login": "pydantic",
+      "gravatar_id": "",
+      "url": "https://api.github.com/orgs/pydantic",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110818415?"
+    }
   }
 ]
