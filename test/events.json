@@ -586,5 +586,141 @@
     },
     "public": true,
     "created_at": "2025-09-24T21:49:48Z"
+  },
+  {
+    "id": "55164742289",
+    "type": "IssuesEvent",
+    "actor": {
+      "id": 18148989,
+      "login": "idosal",
+      "display_login": "idosal",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/idosal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18148989?"
+    },
+    "repo": {
+      "id": 983113668,
+      "name": "idosal/mcp-ui",
+      "url": "https://api.github.com/repos/idosal/mcp-ui"
+    },
+    "payload": {
+      "action": "closed",
+      "issue": {
+        "url": "https://api.github.com/repos/idosal/mcp-ui/issues/112",
+        "repository_url": "https://api.github.com/repos/idosal/mcp-ui",
+        "labels_url": "https://api.github.com/repos/idosal/mcp-ui/issues/112/labels{/name}",
+        "comments_url": "https://api.github.com/repos/idosal/mcp-ui/issues/112/comments",
+        "events_url": "https://api.github.com/repos/idosal/mcp-ui/issues/112/events",
+        "html_url": "https://github.com/idosal/mcp-ui/issues/112",
+        "id": 3446731173,
+        "node_id": "I_kwDOOpkfxM7NcPGl",
+        "number": 112,
+        "title": "✨ Set up Copilot instructions",
+        "user": {
+          "login": "idosal",
+          "id": 18148989,
+          "node_id": "MDQ6VXNlcjE4MTQ4OTg5",
+          "avatar_url": "https://avatars.githubusercontent.com/u/18148989?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/idosal",
+          "html_url": "https://github.com/idosal",
+          "followers_url": "https://api.github.com/users/idosal/followers",
+          "following_url": "https://api.github.com/users/idosal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/idosal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/idosal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/idosal/subscriptions",
+          "organizations_url": "https://api.github.com/users/idosal/orgs",
+          "repos_url": "https://api.github.com/users/idosal/repos",
+          "events_url": "https://api.github.com/users/idosal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/idosal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "labels": [],
+        "state": "closed",
+        "locked": false,
+        "assignee": {
+          "login": "Copilot",
+          "id": 198982749,
+          "node_id": "BOT_kgDOC9w8XQ",
+          "avatar_url": "https://avatars.githubusercontent.com/in/1143301?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/Copilot",
+          "html_url": "https://github.com/apps/copilot-swe-agent",
+          "followers_url": "https://api.github.com/users/Copilot/followers",
+          "following_url": "https://api.github.com/users/Copilot/following{/other_user}",
+          "gists_url": "https://api.github.com/users/Copilot/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/Copilot/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/Copilot/subscriptions",
+          "organizations_url": "https://api.github.com/users/Copilot/orgs",
+          "repos_url": "https://api.github.com/users/Copilot/repos",
+          "events_url": "https://api.github.com/users/Copilot/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/Copilot/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "assignees": [
+          {
+            "login": "Copilot",
+            "id": 198982749,
+            "node_id": "BOT_kgDOC9w8XQ",
+            "avatar_url": "https://avatars.githubusercontent.com/in/1143301?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/Copilot",
+            "html_url": "https://github.com/apps/copilot-swe-agent",
+            "followers_url": "https://api.github.com/users/Copilot/followers",
+            "following_url": "https://api.github.com/users/Copilot/following{/other_user}",
+            "gists_url": "https://api.github.com/users/Copilot/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/Copilot/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/Copilot/subscriptions",
+            "organizations_url": "https://api.github.com/users/Copilot/orgs",
+            "repos_url": "https://api.github.com/users/Copilot/repos",
+            "events_url": "https://api.github.com/users/Copilot/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/Copilot/received_events",
+            "type": "Bot",
+            "user_view_type": "public",
+            "site_admin": false
+          }
+        ],
+        "milestone": null,
+        "comments": 0,
+        "created_at": "2025-09-23T21:32:43Z",
+        "updated_at": "2025-09-24T21:50:42Z",
+        "closed_at": "2025-09-24T21:50:42Z",
+        "author_association": "OWNER",
+        "active_lock_reason": null,
+        "sub_issues_summary": {
+          "total": 0,
+          "completed": 0,
+          "percent_completed": 0
+        },
+        "issue_dependencies_summary": {
+          "blocked_by": 0,
+          "total_blocked_by": 0,
+          "blocking": 0,
+          "total_blocking": 0
+        },
+        "body": "Configure instructions for this repository as documented in [Best practices for Copilot coding agent in your repository](https://gh.io/copilot-coding-agent-tips).\n\n<Onboard this repo>",
+        "reactions": {
+          "url": "https://api.github.com/repos/idosal/mcp-ui/issues/112/reactions",
+          "total_count": 1,
+          "+1": 0,
+          "-1": 0,
+          "laugh": 0,
+          "hooray": 0,
+          "confused": 0,
+          "heart": 0,
+          "rocket": 0,
+          "eyes": 1
+        },
+        "timeline_url": "https://api.github.com/repos/idosal/mcp-ui/issues/112/timeline",
+        "performed_via_github_app": null,
+        "state_reason": "completed"
+      }
+    },
+    "public": true,
+    "created_at": "2025-09-24T21:50:43Z"
   }
 ]
