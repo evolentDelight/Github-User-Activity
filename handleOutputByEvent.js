@@ -12,6 +12,8 @@ function pullRequestEvent(event) {} //Added test json data
 
 function issuesEvent(event) {}
 
+function issueCommentEvent(event) {}
+
 export default function handleOutputByEvent(events) {
   let outputs = [];
 
