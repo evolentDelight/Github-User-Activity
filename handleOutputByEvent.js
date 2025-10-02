@@ -12,6 +12,8 @@ function pullRequestEvent(event) {} //Added test json data
 
 function pullRequestReviewEvent(event) {}
 
+function pullRequestReviewCommentEvent(event) {}
+
 function issuesEvent(event) {}
 
 function issueCommentEvent(event) {}
