@@ -10,6 +10,8 @@ function createEvent(event) {}
 
 function pullRequestEvent(event) {} //Added test json data
 
+function pullRequestReviewEvent(event) {}
+
 function issuesEvent(event) {}
 
 function issueCommentEvent(event) {}
