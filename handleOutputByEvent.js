@@ -18,6 +18,10 @@ function issuesEvent(event) {}
 
 function issueCommentEvent(event) {}
 
+function releaseEvent(event) {}
+
+function deleteEvent(event) {}
+
 export default function handleOutputByEvent(events) {
   let outputs = [];
 
