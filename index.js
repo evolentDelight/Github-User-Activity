@@ -10,7 +10,7 @@ function processUserEvents(username, events) {
   const result = handleOutputByEvent(events);
 
   //Output results onto console
-  result.forEach(event => console.log(event))
+  result.forEach((event) => console.log(event));
 }
 
 async function getUserActivity(username) {
@@ -31,14 +31,20 @@ async function getUserActivity(username) {
           console.error(
             `Account \[${username}\] is not valid. Please type in a valid Github Account.`
           );
+          console.error(`Error Status: ${response.status}`);
+          console.error(`Error Message: ${response.statusText}`);
           break;
         case 403:
           console.error(`Account \[${username}\] is currently not available.`);
+          console.error(`Error Status: ${response.status}`);
+          console.error(`Error Message: ${response.statusText}`);
           break;
         case 503:
           console.error(
             `Github server is temporarily unavailable. Try again later.`
           );
+          console.error(`Error Status: ${response.status}`);
+          console.error(`Error Message: ${response.statusText}`);
           break;
       }
       return 0;
