@@ -10,6 +10,8 @@ function createEvent(event) {}
 
 function pullRequestEvent(event) {} //Added test json data
 
+function issuesEvent(event) {}
+
 export default function handleOutputByEvent(events) {
   let outputs = [];
 
