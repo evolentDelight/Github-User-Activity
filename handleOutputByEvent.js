@@ -6,6 +6,8 @@ function watchEvent(event) {
   return `Started watching ${event.repo.name}`;
 }
 
+function pullRequestEvent(event) {} //Added test json data
+
 export default function handleOutputByEvent(events) {
   let outputs = [];
 
