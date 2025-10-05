@@ -11,7 +11,7 @@ import fs from "fs";
 let events; // JSON object from JSON file
 
 try {
-  let jsonData = fs.readFileSync("./events.json");
+  let jsonData = fs.readFileSync("./data/events.json");
   events = JSON.parse(jsonData);
 } catch (error) {
   console.error(error);
