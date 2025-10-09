@@ -6,7 +6,15 @@ function watchEvent(event) {
   return `Started watching ${event.repo.name}`;
 }
 
-function createEvent(event) {}
+function createEvent(event) {
+  // let output;
+  // if (event.ref_type === "repository") output = `: ${event.repo.name}`;
+  // else output = `in repository: ${event.repo.name}`;
+  // return `Created ${ref_type}${output}`;
+  return `Created a ${event.payload.ref_type}${
+    event.payload.ref_type === "repository" ? `:` : ` in repository:`
+  } ${event.repo.name}`;
+}
 
 function pullRequestEvent(event) {} //Added test json data
 
@@ -27,7 +35,10 @@ export default function handleOutputByEvent(events) {
 
   events.forEach((event) => {
     const eventType = event.type;
-    let result = "- "; //Initial console output formatting
+    //Add Date to console output
+    const date = new Date(event.created_at);
+    let result = `${date.toLocaleString()}`;
+    result += "\t- "; //Console output formatting
 
     //Handle determining the type of event
     switch (eventType) {
@@ -37,11 +48,10 @@ export default function handleOutputByEvent(events) {
       case "WatchEvent":
         result += watchEvent(event);
         break;
+      case "CreateEvent":
+        result += createEvent(event);
+        break;
     }
-
-    //Add Date to console output
-    const date = new Date(event.created_at);
-    result += `\t - ${date.toLocaleString()}`;
 
     outputs.push(result);
   });
