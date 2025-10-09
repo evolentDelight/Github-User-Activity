@@ -30,14 +30,13 @@ export default function handleOutputByEvent(events) {
   let outputs = [];
 
   events.forEach((event) => {
-    const eventType = event.type;
     //Add Date to console output
     const date = new Date(event.created_at);
     let result = `${date.toLocaleString()}`;
     result += "\t- "; //Console output formatting
 
     //Handle determining the type of event
-    switch (eventType) {
+    switch (event.type) {
       case "PushEvent":
         result += pushEvent(event);
         break;
