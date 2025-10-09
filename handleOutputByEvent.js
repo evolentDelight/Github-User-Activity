@@ -7,10 +7,6 @@ function watchEvent(event) {
 }
 
 function createEvent(event) {
-  // let output;
-  // if (event.ref_type === "repository") output = `: ${event.repo.name}`;
-  // else output = `in repository: ${event.repo.name}`;
-  // return `Created ${ref_type}${output}`;
   return `Created a ${event.payload.ref_type}${
     event.payload.ref_type === "repository" ? `:` : ` in repository:`
   } ${event.repo.name}`;
