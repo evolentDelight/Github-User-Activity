@@ -12,7 +12,7 @@ function createEvent(event) {
   } ${event.repo.name}`;
 }
 
-function pullRequestEvent(event) {} //Added test json data
+function pullRequestEvent(event) {}
 
 function pullRequestReviewEvent(event) {}
 
@@ -24,7 +24,9 @@ function issueCommentEvent(event) {}
 
 function releaseEvent(event) {}
 
-function deleteEvent(event) {}
+function deleteEvent(event) {
+  return `Deleted a ${event.payload.ref_type} in repository: ${event.repo.name}`;
+}
 
 export default function handleOutputByEvent(events) {
   let outputs = [];
@@ -45,6 +47,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "CreateEvent":
         result += createEvent(event);
+        break;
+      case "DeleteEvent":
+        result += deleteEvent(event);
         break;
     }
 
