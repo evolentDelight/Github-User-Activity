@@ -14,6 +14,8 @@ This json data has exactly one of each event of the following
 - PullRequestReviewCommentEvent
 - IssuesEvent
 - IssueCommentEvent
+  - Issue Comment
+  - Pull Request Comment
 - ReleaseEvent
 - DeleteEvent
 
