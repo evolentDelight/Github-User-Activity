@@ -24,7 +24,15 @@ function issuesEvent(event) {
   } issue #${event.payload.issue.number} in repository: ${event.repo.name}`;
 }
 
-function issueCommentEvent(event) {}
+function issueCommentEvent(event) {
+  return `${
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+  } a(n) ${
+    "pull_request" in event.payload.issue ? "Pull Request" : "Issue"
+  } Comment in issue #${event.payload.issue.number} in repository: ${
+    event.repo.name
+  }`;
+}
 
 function releaseEvent(event) {
   return `Released a(n) ${event.payload.action} activity in repository: ${event.repo.name}`;
@@ -59,6 +67,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "IssuesEvent":
         result += issuesEvent(event);
+        break;
+      case "IssueCommentEvent":
+        result += issueCommentEvent(event);
         break;
       case "ReleaseEvent":
         result += releaseEvent(event);
