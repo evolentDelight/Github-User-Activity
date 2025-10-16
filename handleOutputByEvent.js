@@ -22,7 +22,9 @@ function issuesEvent(event) {}
 
 function issueCommentEvent(event) {}
 
-function releaseEvent(event) {}
+function releaseEvent(event) {
+  return `Released a(n) ${event.payload.action} activity in repository: ${event.repo.name}`;
+}
 
 function deleteEvent(event) {
   return `Deleted a ${event.payload.ref_type} in repository: ${event.repo.name}`;
@@ -51,6 +53,8 @@ export default function handleOutputByEvent(events) {
       case "DeleteEvent":
         result += deleteEvent(event);
         break;
+      case "ReleaseEvent":
+        result += releaseEvent(event);
     }
 
     outputs.push(result);
