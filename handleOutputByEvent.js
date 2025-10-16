@@ -18,7 +18,11 @@ function pullRequestReviewEvent(event) {}
 
 function pullRequestReviewCommentEvent(event) {}
 
-function issuesEvent(event) {}
+function issuesEvent(event) {
+  return `${
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+  } an issue in repository: ${event.repo.name}`;
+}
 
 function issueCommentEvent(event) {}
 
@@ -52,6 +56,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "DeleteEvent":
         result += deleteEvent(event);
+        break;
+      case "IssuesEvent":
+        result += issuesEvent(event);
         break;
       case "ReleaseEvent":
         result += releaseEvent(event);
