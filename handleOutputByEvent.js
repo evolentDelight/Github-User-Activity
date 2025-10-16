@@ -55,6 +55,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "ReleaseEvent":
         result += releaseEvent(event);
+        break;
+      default:
+        result += `Sorry, event, ${event.type}, has not been implemented yet.`;
     }
 
     outputs.push(result);
