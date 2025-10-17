@@ -14,7 +14,9 @@ function createEvent(event) {
 
 function pullRequestEvent(event) {}
 
-function pullRequestReviewEvent(event) {}
+function pullRequestReviewEvent(event) {
+  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
+}
 
 function pullRequestReviewCommentEvent(event) {}
 
@@ -69,6 +71,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "IssueCommentEvent":
         result += issueCommentEvent(event);
+        break;
+      case "PullRequestReviewEvent":
+        result += pullRequestReviewEvent(event);
         break;
       case "ReleaseEvent":
         result += releaseEvent(event);
