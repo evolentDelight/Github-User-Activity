@@ -25,11 +25,10 @@ function issuesEvent(event) {
 }
 
 function issueCommentEvent(event) {
+  let type = 'pull_request' in event.payload.issue ? "Pull Request" : "Issue"
   return `${
     event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a(n) ${
-    "pull_request" in event.payload.issue ? "Pull Request" : "Issue"
-  } Comment in issue #${event.payload.issue.number} in repository: ${
+  } a(n) ${type} Comment in ${type.toLowerCase()} #${event.payload.issue.number} in repository: ${
     event.repo.name
   }`;
 }
