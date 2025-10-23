@@ -12,7 +12,22 @@ function createEvent(event) {
   } ${event.repo.name}`;
 }
 
-function pullRequestEvent(event) {}
+function pullRequestEvent(event) {
+  let result = '';
+  switch(event.action){
+    case "assigned":
+    case "unassigned":
+      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} ${event.payload.assignee.login} to issue #${event.payload.number} in repository: ${event.repo.name}`
+      break;
+    case "labeled":
+    case "unlabeled":
+      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} \'${event.payload.label.name}\' to issue #${event.payload.number} in repository: ${event.repo.name}`
+      break;
+    default:// 'opened', 'closed', 'reopened' a pull request
+      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request #${event.payload.number} in repository: ${event.repo.name}`
+  }
+  return result;
+}
 
 function pullRequestReviewEvent(event) {
   return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
@@ -73,6 +88,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "IssueCommentEvent":
         result += issueCommentEvent(event);
+        break;
+      case "PullRequestEvent":
+        result += pullRequestEvent(event);
         break;
       case "PullRequestReviewEvent":
         result += pullRequestReviewEvent(event);
