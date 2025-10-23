@@ -1,5 +1,5 @@
 function pushEvent(event) {
-  return `Pushed ${event.payload.size} commits to ${event.repo.name}`;
+  return `Pushed commit(s) to ${event.repo.name}`;
 }
 
 function watchEvent(event) {
@@ -10,6 +10,10 @@ function createEvent(event) {
   return `Created a ${event.payload.ref_type}${
     event.payload.ref_type === "repository" ? `:` : ` in repository:`
   } ${event.repo.name}`;
+}
+
+function forkEvent(event){
+  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a repository: ${event.payload.forkee.name}`
 }
 
 function pullRequestEvent(event) {
@@ -82,6 +86,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "DeleteEvent":
         result += deleteEvent(event);
+        break;
+      case "ForkEvent":
+        result += forkEvent(event);
         break;
       case "IssuesEvent":
         result += issuesEvent(event);
