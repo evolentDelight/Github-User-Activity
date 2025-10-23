@@ -18,7 +18,9 @@ function pullRequestReviewEvent(event) {
   return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
 }
 
-function pullRequestReviewCommentEvent(event) {}
+function pullRequestReviewCommentEvent(event) {
+  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review Comment on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
+}
 
 function issuesEvent(event) {
   return `${
@@ -74,6 +76,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "PullRequestReviewEvent":
         result += pullRequestReviewEvent(event);
+        break;
+      case "PullRequestReviewCommentEvent":
+        result += pullRequestReviewCommentEvent(event);
         break;
       case "ReleaseEvent":
         result += releaseEvent(event);
