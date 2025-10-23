@@ -18,11 +18,11 @@ This json data has exactly one of each event of the following
   - Pull Request Comment
 - ReleaseEvent
 - DeleteEvent
+- ForkEvent
 
 Missing events due to scarcity
 
 - CommitCommentEvent
-- ForkEvent
 - GollumEvent
 - PublicEvent
 - PullRequestReviewThreadEvent
