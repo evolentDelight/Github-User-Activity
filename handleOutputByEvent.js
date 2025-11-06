@@ -13,25 +13,21 @@ function createEvent(event) {
 }
 
 function forkEvent(event) {
-  return `${
-    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a repository: ${event.payload.forkee.name}`;
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
+  return `${capitalizedEvent} a repository: ${event.payload.forkee.name}`;
 }
 
 function memberEvent(event) {
   let result = "";
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
   switch (event.payload.action) {
     case "added":
-      result += `${
-        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-      } user ${event.payload.member.login} to repository: ${event.repo.name}`;
+      result += `${capitalizedEvent} user ${event.payload.member.login} to repository: ${event.repo.name}`;
       break;
     case "edited":
-      result += `${
-        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-      } user ${event.payload.member.login}'s permission in repository ${
-        event.repo.name
-      }`;
+      result += `${capitalizedEvent} user ${event.payload.member.login}'s permission in repository ${event.repo.name}`;
       break;
     default:
       result += `Event action [${event.action}] has not been implemented because it does not exist in the documentation.`;
@@ -43,60 +39,46 @@ function memberEvent(event) {
 
 function pullRequestEvent(event) {
   let result = "";
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
   switch (event.payload.action) {
     case "assigned":
     case "unassigned":
-      result += `${
-        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-      } ${event.payload.assignee.login} to issue #${
-        event.payload.number
-      } in repository: ${event.repo.name}`;
+      result += `${capitalizedEvent} ${event.payload.assignee.login} to issue #${event.payload.number} in repository: ${event.repo.name}`;
       break;
     case "labeled":
     case "unlabeled":
-      result += `${
-        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-      } \'${event.payload.label.name}\' to issue #${
-        event.payload.number
-      } in repository: ${event.repo.name}`;
+      result += `${capitalizedEvent} \'${event.payload.label.name}\' to issue #${event.payload.number} in repository: ${event.repo.name}`;
       break;
     default: // 'opened', 'closed', 'reopened' a pull request
-      result += `${
-        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-      } a Pull Request #${event.payload.number} in repository: ${
-        event.repo.name
-      }`;
+      result += `${capitalizedEvent} a Pull Request #${event.payload.number} in repository: ${event.repo.name}`;
   }
   return result;
 }
 
 function pullRequestReviewEvent(event) {
-  return `${
-    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a Pull Request Review on pull request #${
-    event.payload.pull_request.number
-  } in repository: ${event.repo.name}`;
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
+  return `${capitalizedEvent} a Pull Request Review on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`;
 }
 
 function pullRequestReviewCommentEvent(event) {
-  return `${
-    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a Pull Request Review Comment on pull request #${
-    event.payload.pull_request.number
-  } in repository: ${event.repo.name}`;
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
+  return `${capitalizedEvent} a Pull Request Review Comment on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`;
 }
 
 function issuesEvent(event) {
-  return `${
-    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } issue #${event.payload.issue.number} in repository: ${event.repo.name}`;
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
+  return `${capitalizedEvent} issue #${event.payload.issue.number} in repository: ${event.repo.name}`;
 }
 
 function issueCommentEvent(event) {
   let type = "pull_request" in event.payload.issue ? "Pull Request" : "Issue";
-  return `${
-    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a(n) ${type} Comment in ${type.toLowerCase()} #${
+  let capitalizedEvent =
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1);
+  return `${capitalizedEvent} a(n) ${type} Comment in ${type.toLowerCase()} #${
     event.payload.issue.number
   } in repository: ${event.repo.name}`;
 }
