@@ -8,6 +8,7 @@ This json data has exactly one of each event of the following
 
 - CreateEvent
 - WatchEvent
+- MemberEvent
 - PushEvent
 - PullRequestEvent
 - PullRequestReviewEvent
