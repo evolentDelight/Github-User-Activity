@@ -22,7 +22,7 @@ let test_datas = {
 };
 
 for (let [testName, fileName] of Object.entries(test_datas)) {
-  console.log("=====================================");
+  console.log("=========================================");
   console.log(`====== Testing ${testName} ======`);
   let events; // JSON object from JSON file
 
