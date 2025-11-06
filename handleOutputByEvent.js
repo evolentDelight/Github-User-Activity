@@ -12,33 +12,78 @@ function createEvent(event) {
   } ${event.repo.name}`;
 }
 
-function forkEvent(event){
-  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a repository: ${event.payload.forkee.name}`
+function forkEvent(event) {
+  return `${
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+  } a repository: ${event.payload.forkee.name}`;
+}
+
+function memberEvent(event) {
+  let result = "";
+  switch (event.payload.action) {
+    case "added":
+      result += `${
+        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+      } user ${event.payload.member.login} to repository: ${event.repo.name}`;
+      break;
+    case "edited":
+      result += `${
+        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+      } user ${event.payload.member.login}'s permission in repository ${
+        event.repo.name
+      }`;
+      break;
+    default:
+      result += `Event action [${event.action}] has not been implemented because it does not exist in the documentation.`;
+      result += `\nPlease inform the developer with the exact data.`;
+  }
+
+  return result;
 }
 
 function pullRequestEvent(event) {
-  let result = '';
-  switch(event.action){
+  let result = "";
+  switch (event.payload.action) {
     case "assigned":
     case "unassigned":
-      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} ${event.payload.assignee.login} to issue #${event.payload.number} in repository: ${event.repo.name}`
+      result += `${
+        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+      } ${event.payload.assignee.login} to issue #${
+        event.payload.number
+      } in repository: ${event.repo.name}`;
       break;
     case "labeled":
     case "unlabeled":
-      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} \'${event.payload.label.name}\' to issue #${event.payload.number} in repository: ${event.repo.name}`
+      result += `${
+        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+      } \'${event.payload.label.name}\' to issue #${
+        event.payload.number
+      } in repository: ${event.repo.name}`;
       break;
-    default:// 'opened', 'closed', 'reopened' a pull request
-      result += `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request #${event.payload.number} in repository: ${event.repo.name}`
+    default: // 'opened', 'closed', 'reopened' a pull request
+      result += `${
+        event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+      } a Pull Request #${event.payload.number} in repository: ${
+        event.repo.name
+      }`;
   }
   return result;
 }
 
 function pullRequestReviewEvent(event) {
-  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
+  return `${
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+  } a Pull Request Review on pull request #${
+    event.payload.pull_request.number
+  } in repository: ${event.repo.name}`;
 }
 
 function pullRequestReviewCommentEvent(event) {
-  return `${event.payload.action[0].toUpperCase() + event.payload.action.slice(1)} a Pull Request Review Comment on pull request #${event.payload.pull_request.number} in repository: ${event.repo.name}`
+  return `${
+    event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
+  } a Pull Request Review Comment on pull request #${
+    event.payload.pull_request.number
+  } in repository: ${event.repo.name}`;
 }
 
 function issuesEvent(event) {
@@ -48,12 +93,12 @@ function issuesEvent(event) {
 }
 
 function issueCommentEvent(event) {
-  let type = 'pull_request' in event.payload.issue ? "Pull Request" : "Issue"
+  let type = "pull_request" in event.payload.issue ? "Pull Request" : "Issue";
   return `${
     event.payload.action[0].toUpperCase() + event.payload.action.slice(1)
-  } a(n) ${type} Comment in ${type.toLowerCase()} #${event.payload.issue.number} in repository: ${
-    event.repo.name
-  }`;
+  } a(n) ${type} Comment in ${type.toLowerCase()} #${
+    event.payload.issue.number
+  } in repository: ${event.repo.name}`;
 }
 
 function releaseEvent(event) {
@@ -89,6 +134,9 @@ export default function handleOutputByEvent(events) {
         break;
       case "ForkEvent":
         result += forkEvent(event);
+        break;
+      case "MemberEvent":
+        result += memberEvent(event);
         break;
       case "IssuesEvent":
         result += issuesEvent(event);
