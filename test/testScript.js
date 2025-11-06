@@ -9,16 +9,11 @@ import handleOutputByEvent from "../handleOutputByEvent.js";
 import fs from "fs";
 
 /* Test Data */
-let general = "./data/events.json";
-let douwem = "./data/DouweM-public-events.json";
-let isodal = "./data/isodal-public-events.json";
-let ruvnet = "./data/ruvnet-public-events.json";
-
 let test_datas = {
-  general: general,
-  douwem: douwem,
-  isodal: isodal,
-  ruvnet: ruvnet,
+  general: "./data/events.json",
+  douwem: "./data/DouweM-public-events.json",
+  isodal: "./data/isodal-public-events.json",
+  ruvnet: "./data/ruvnet-public-events.json",
 };
 
 for (let [testName, fileName] of Object.entries(test_datas)) {
