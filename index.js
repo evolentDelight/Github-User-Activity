@@ -47,7 +47,7 @@ async function getUserActivity(username) {
           console.error(`Error Message: ${response.statusText}`);
           break;
       }
-      return 0;
+      process.exit(1);
     }
 
     const result = await response.json();
@@ -55,6 +55,7 @@ async function getUserActivity(username) {
     processUserEvents(username, result);
   } catch (error) {
     console.error(error.message);
+    process.exit(1);
   }
 }
 
