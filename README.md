@@ -28,7 +28,7 @@ First, download NodeJS from their website and install it
 
 Open up the console, terminal, or Command Line Interface in any folder/directory.
 
-Using the keyword
+Type in below keyword and replace `<github username>` with a valid Github Account
 `github-activity <github username>`
 
 Sample Output:
