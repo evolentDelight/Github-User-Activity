@@ -14,6 +14,13 @@ function processUserEvents(username, events) {
 }
 
 async function getUserActivity(username) {
+  if (!username) {
+    console.error(
+      `Error: you have not entered a github account. Please follow the command: \`github-activity <github username>\``
+    );
+    process.exit(1);
+  }
+
   const url = `https://api.github.com/users/${username}/events`;
   const headers = {
     Accept: "application/vnd.github+json",
