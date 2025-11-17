@@ -54,6 +54,10 @@ async function getUserActivity(username) {
           console.error(`Error Status: ${response.status}`);
           console.error(`Error Message: ${response.statusText}`);
           break;
+        default:
+          console.error(`Request Failed.`);
+          console.error(`Error Status: ${response.status}`);
+          console.error(`Error Message: ${response.statusText}`);
       }
       process.exit(1);
     }
