@@ -30,7 +30,7 @@ function memberEvent(event) {
       result += `${capitalizedEvent} user ${event.payload.member.login}'s permission in repository ${event.repo.name}`;
       break;
     default:
-      result += `Event action [${event.action}] has not been implemented because it does not exist in the documentation.`;
+      result += `Event action [${event.payload.action}] has not been implemented because it does not exist in the documentation.`;
       result += `\nPlease inform the developer with the exact data.`;
   }
 
